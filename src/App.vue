@@ -1,11 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {RouterView, useRoute } from 'vue-router';
+
+const route = useRoute();
+</script>
+
 
 <template>
-  <h1  class="text-3xl font-bold underline">You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <template  v-if="route.meta.layout">
+    <component :is="route.meta.layout">
+      <RouterView />
+    </component>
+  </template>
+  <template v-else>
+    <RouterView />
+  </template>
 </template>
 
 <style scoped></style>
