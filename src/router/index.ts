@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'guest.login',
       component: LoginView,
     },
+    {
+      path: '/admin/',
+      name: 'admin.home',
+      component: LoginView,
+    },
   ],
 })
 
