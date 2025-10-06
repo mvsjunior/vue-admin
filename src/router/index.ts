@@ -1,3 +1,5 @@
+import AdminLayout from '@/layouts/admin/AdminLayout.vue'
+import DashboardView from '@/views/admin/DashboardView.vue'
 import LoginView from '@/views/guest/LoginView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -17,7 +19,13 @@ const router = createRouter({
     {
       path: '/admin/',
       name: 'admin.home',
-      component: LoginView,
+      component: DashboardView,
+      meta: {
+        layout: AdminLayout,
+        path: [
+          {title: 'Dashboard', path: '/admin/'}
+        ]
+      }
     },
   ],
 })
