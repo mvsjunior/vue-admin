@@ -16,4 +16,3 @@ const route = useRoute();
   </template>
 </template>
 
-<style scoped></style>

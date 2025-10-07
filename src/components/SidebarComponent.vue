@@ -1,11 +1,11 @@
 <template>
-  <div id="sidebar" :class="[
+  <div :class="[
     // Mobile -> sidebar fixa
     'text-gray-600 fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-md transform transition-transform duration-300 ease-in-out',
     isOpen ? 'translate-x-0' : '-translate-x-full',
 
     // Desktop -> sidebar estática, sempre visível
-    'lg:static lg:translate-x-0'
+    'lg:translate-x-0'
   ]" style="display: flex; flex-direction: column; justify-content:space-between;">
     <!-- Header com botão de fechar (mobile) -->
     <div>
@@ -37,10 +37,3 @@ defineProps({
   isOpen: Boolean,
 })
 </script>
-
-<style>
-
-body div{
-  margin:0;
-}
-</style>
