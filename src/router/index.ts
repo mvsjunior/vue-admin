@@ -29,6 +29,17 @@ const router = createRouter({
       }
     },
     {
+      path: '/admin/dashboard',
+      name: 'admin.dashboard',
+      component: DashboardView,
+      meta: {
+        layout: AdminLayout,
+        path: [
+          {title: 'Dashboard', path: '/admin/'}
+        ]
+      }
+    },
+    {
       path: '/admin/users',
       name: 'admin.users',
       component: UsersView,
