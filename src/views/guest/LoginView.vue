@@ -37,7 +37,7 @@ async function login(){
 
 <template>
     
-    <div class="w-100 m-auto flex flex-col justify-center px-6 py-12 lg:px-8 gap-4 bg-white h-fit rounded shadow text-gray-500">
+    <div class="w-auto flex flex-col justify-center px-6 py-12 lg:px-8 gap-4 bg-white h-full text-gray-500">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             <span class="block mx-auto mt-10 text-center text-2xl/9  tracking-tight "><i class="fa fa-calendar"></i> <b class="font-bold">Painel</b> Admin </span>
         </div>
@@ -61,11 +61,9 @@ async function login(){
 
 
 <style>
-    body,html{
+    body,html {
         width: 100vw;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 100vh;
+        box-sizing: border-box;
     }
 </style>
