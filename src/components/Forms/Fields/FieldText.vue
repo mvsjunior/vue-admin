@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-    <div :class="containerClass ?? 'mb-5'"  style="margin: 10px auto">
+    <div :class="containerClass">
         <label :class="labelClass" for="email">{{ label }}</label>
         <input 
             :type="type ?? 'text'" 

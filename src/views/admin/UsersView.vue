@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import SearchField from '@/components/Forms/Fields/SearchField.vue';
-import CrudTable from '@/components/Tables/CrudTable.vue';
 import ViewTitle from '@/components/ViewTitle.vue';
 import { ApiRequest } from '@/factories/ApiRequest';
 import type { FetchUsersResponse, User } from '@/types/dummyjson';
@@ -9,6 +8,9 @@ import PaginationComponent from '@/components/paginations/PaginationComponent.vu
 import { computed, ref } from 'vue';
 import type { Ref } from 'vue';
 import { dummyPaginationMapper, type paginatedDummyJson } from '@/mappers/DummyjsonMappers';
+import ElDropdownMenu from '@/components/dropdown/ElDropdownMenu.vue';
+import ElDropdownItem from '@/components/dropdown/ElDropdownItem.vue';
+import { RouterLink } from 'vue-router';
 
 const api = ApiRequest.getInstance();
 const users: Ref<User[] | []> = ref([]);
@@ -76,7 +78,7 @@ const compUsers = computed(() => {
     <view-title title="Usuários" />
 
     <div class="flex justify-between">
-        <button class="btn bg-success-hover p-2 rounded my-2"><i class="fa fa-user-plus"></i></button>
+        <router-link :to="{name:'admin.users.create'}" class="btn bg-success-hover p-2 rounded my-2"><i class="fa fa-user-plus"></i></router-link>
         <div>
             <div>
                 <div class="my-2">
@@ -100,14 +102,33 @@ const compUsers = computed(() => {
     </div>
 
     <div class="flex flex-col h-full  items-end w-full gap-2" v-else-if="!isLoading">
-        <crud-table :header="['id','name','role']" class="border border-gray-200" v-if="compUsers.length > 0">
-            <tr v-for="(_user,index) of compUsers" :key="index" class="border-b border-gray-200 text-[10pt]"
-                :class="index%2 ? 'bg-gray-200/10' : ''">
-                <td class="px-4 py-2">{{ _user.id }}</td>
-                <td>{{ `${_user.firstName} ${_user.lastName}` }}</td>
-                <td>{{ _user.role }}</td>
-            </tr>
-        </crud-table>
+        <table  class="w-full text-[9pt] text-left rtl:text-right text-gray-500 " v-if="compUsers.length > 0">
+            <thead class="uppercase text-gray-700  bg-gray-100">
+                <tr>
+                    <th class="py-2 pl-4">ID</th>
+                    <th class="py-2 pl-4">Nome</th>
+                    <th class="py-2 pl-4">Papel</th>
+                    <th width="32"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(_user,index) of compUsers" :key="index" class="border-b border-gray-200 text-[10pt] hover:bg-gray-200/30"
+                    :class="index%2 ? 'bg-gray-200/10' : ''">
+                    <td class="px-4 py-2">{{ _user.id }}</td>
+                    <td class="px-4 py-2">{{ `${_user.firstName} ${_user.lastName}` }}</td>
+                    <td class="px-4 py-2">{{ _user.role }}</td>
+                    <td>
+                        <ElDropdownMenu btn-class="btn  p-1  text-xl" btn-content="...">
+                            <ElDropdownItem>Visualizar</ElDropdownItem>
+                            <ElDropdownItem @click="() => console.log('clicked')">Editar</ElDropdownItem>
+                            <ElDropdownItem class="text-red-500" @click="() => console.log('clicked')">
+                                Apagar
+                            </ElDropdownItem>
+                        </ElDropdownMenu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <h1 class="text-center text-2xl my-5 p-10 w-full" v-else>Nenhum registro encontrado...</h1>
 
         <div class="pagination" v-if="pagination.total > 30">
