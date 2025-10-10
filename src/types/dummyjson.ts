@@ -31,8 +31,7 @@ export type NewUser = {
       lastName: string,
       email: string,
       role: string,
-      password: string,
-      password_confirm: string
+      password: string
 }
 
 export type FetchUsersResponse = {

@@ -64,7 +64,7 @@ const router = createRouter({
         layout: AdminLayout,
         path: [
           {title: 'Usuários', path: {name: 'admin.users'}},
-          {title: 'Cadastrar', path: {name: 'admin.users.crete'}}
+          {title: 'Cadastrar', path: {name: 'admin.users.create'}}
         ]
       }
     },
