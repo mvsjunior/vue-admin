@@ -5,9 +5,21 @@ O projeto possui tela de **login**, **listagem de usuários** e **integração c
 
 ---
 
+## Aprendizados
+
+Este projeto foi desenvolvido com o objetivo de praticar:
+- Estruturação de um painel administrativo genérico em Vue.js;
+- Criação de layouts responsivos com TailwindCSS;
+- Consumo de APIs REST;
+- Organização de componentes e rotas;
+- Gerenciamento de estados usando o Pinia;
+- Boas práticas de código e documentação.
+
+---
+
 ## Demonstração
 
-> [🔗 Clique aqui para ver a demo online](https://seu-link-deploy.vercel.app)
+> [🔗 Clique aqui para ver a demo online](https://adminjs.codigoweb.com.br/login)
 
 | Tela de Login | Dashboard de Usuários |
 |----------------|-----------------------|
@@ -50,14 +62,34 @@ src/
 ├── views/            # Telas do sistema (Login.vue, Users.vue)
 ├── router/           # Configuração das rotas
 ├── middlewares/      # Códigos intermediários que são executados ao acessar uma determinada da aplicação.
+├── types/            # Definições de tipos usados na aplicação (TypeScript)
 ├── services/         # Requisições HTTP (ex: AuthService.js, UserService.js)
 ├── store/            # Pinia
 ├── main-style.css    # Folha de estilo principal da aplicação
 └── main.ts           # Arquivo principal da aplicação
 ```
+---
+## Como Executar Localmente
+
+```bash
+# 1. Clone este repositório
+git clone https://github.com/mvsjunior/vue-admin
+
+# 2. Acesse o diretório
+cd vue-admin
+
+# 3. Instale as dependências
+npm install
+
+# 4. Execute o servidor de desenvolvimento
+npm run dev
+
+```
+Depois acesse [http://localhost:5173](http://localhost:5173)
 
 ---
-# Autor
+
+## 👨‍💻 Autor
 
 ### Mauro Vieira
 #### Desenvolvedor Fullstack (PHP • Laravel • Vue.js • MySQL • Linux)
