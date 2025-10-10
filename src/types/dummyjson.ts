@@ -26,6 +26,15 @@ export type User = {
       role: string
 }
 
+export type NewUser = {
+      firstName: string,
+      lastName: string,
+      email: string,
+      role: string,
+      password: string,
+      password_confirm: string
+}
+
 export type FetchUsersResponse = {
   users: User[],
   total: number,

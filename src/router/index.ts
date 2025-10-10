@@ -4,6 +4,7 @@ import UsersView from '@/views/admin/UsersView.vue'
 import LoginView from '@/views/guest/LoginView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { isLoggedIn } from '@/middlewares/AuthMiddleware'
+import UsersCreateView from '@/views/admin/users/UsersCreateView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,19 @@ const router = createRouter({
         layout: AdminLayout,
         path: [
           {title: 'Usuários', path: {name: 'admin.users'}}
+        ]
+      }
+    },
+    {
+      path: '/admin/users/create',
+      name: 'admin.users.create',
+      component: UsersCreateView,
+      beforeEnter: [isLoggedIn],
+      meta: {
+        layout: AdminLayout,
+        path: [
+          {title: 'Usuários', path: {name: 'admin.users'}},
+          {title: 'Cadastrar', path: {name: 'admin.users.crete'}}
         ]
       }
     },
