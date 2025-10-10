@@ -1,48 +1,64 @@
-# ./
+# Painel Admin - VueJs 3
 
-This template should help get you started developing with Vue 3 in Vite.
+Um painel administrativo **genérico, responsivo e moderno**, desenvolvido com **Vue.js 3**, **Vite**, **Pinia** e **TailwindCSS**.  
+O projeto possui tela de **login**, **listagem de usuários** e **integração com API pública (dummyjson)**, simulando o fluxo real de autenticação e consumo de dados.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Demonstração
 
-## Recommended Browser Setup
+> [🔗 Clique aqui para ver a demo online](https://seu-link-deploy.vercel.app)
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+| Tela de Login | Dashboard de Usuários |
+|----------------|-----------------------|
+| ![Login Screenshot](./docs/screens/mobile.guest.login.png) | ![Listagem de usuários](./docs/screens/mobile.admin.users.png) |
 
-## Type Support for `.vue` Imports in TS
+| Menu mobile | Modal |
+|----------------|-----------------------|
+| ![Listagem de usuários](./docs/screens/mobile.admin.menu.png) |  ![Login Screenshot](./docs/screens/mobile.admin.users.created.modal.png) |
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Tecnologias Utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [Vue.js 3 (Composition API)](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
+- [DummyJSON API](https://dummyjson.com/)
+- [Vue Router](https://router.vuejs.org/)
+- [Pinia](https://pinia.vuejs.org/)
 
-## Project Setup
+---
 
-```sh
-npm install
+## Funcionalidades
+
+✅ Tela de Login com autenticação simulada via API  
+✅ Página de Listagem de Usuários (com busca e paginação)  
+✅ Layout totalmente responsivo (mobile first)  
+✅ Componentes reutilizáveis e organizados  
+✅ Estrutura preparada para expansão (rotas, middlwares, módulos, etc.)
+---
+
+## Estrutura do Projeto
+
+```bash
+src/
+├── assets/           # Imagens, ícones e recursos estáticos
+├── components/       # Componentes reutilizáveis (Input, Modal, etc.)
+├── layouts/          # Layout principal do painel
+├── views/            # Telas do sistema (Login.vue, Users.vue)
+├── router/           # Configuração das rotas
+├── middlewares/      # Códigos intermediários que são executados ao acessar uma determinada da aplicação.
+├── services/         # Requisições HTTP (ex: AuthService.js, UserService.js)
+├── store/            # Pinia
+├── main-style.css    # Folha de estilo principal da aplicação
+└── main.ts           # Arquivo principal da aplicação
 ```
 
-### Compile and Hot-Reload for Development
+---
+# Autor
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### Mauro Vieira
+#### Desenvolvedor Fullstack (PHP • Laravel • Vue.js • MySQL • Linux)
+📫 [LinkedIn](https://www.linkedin.com/in/mauro-vieira-1a5809a8/) | [Portfólio](https://github.com/mvsjunior) | [GitHub](https://github.com/mvsjunior)
