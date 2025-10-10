@@ -45,11 +45,11 @@ Este projeto foi desenvolvido com o objetivo de praticar:
 
 ## Funcionalidades
 
-✅ Tela de Login com autenticação simulada via API  
-✅ Página de Listagem de Usuários (com busca e paginação)  
-✅ Layout totalmente responsivo (mobile first)  
-✅ Componentes reutilizáveis e organizados  
-✅ Estrutura preparada para expansão (rotas, middlwares, módulos, etc.)
+- Tela de Login com autenticação simulada via API  
+- Página de Listagem de Usuários (com busca e paginação)  
+- Layout totalmente responsivo (mobile first)  
+- Componentes reutilizáveis e organizados  
+- Estrutura preparada para expansão (rotas, middlwares, módulos, etc.)
 ---
 
 ## Estrutura do Projeto
